@@ -1,5 +1,5 @@
 import "./App.css";
-import Content from "./components/Content";
+import Employees from "./components/Employees";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <main>
         <Header />
-        <Content />
+        <Employees />
         <Footer />
       </main>
     </>
