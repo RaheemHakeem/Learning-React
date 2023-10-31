@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import DataContext from "../context/DataContext";
 
-const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
+const GroupedTeamMembers = () => {
+  const { employees, selectedTeam, setTeam } = useContext(DataContext);
   const [groupedEmployees, setGroupData] = useState(groupedTeamMembers());
 
   function groupedTeamMembers() {
@@ -80,7 +82,7 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam }) => {
               <hr />
               {item.members.map((member) => {
                 return (
-                  <div className="mt-2">
+                  <div key={member.id} className="mt-2">
                     <h5 className="card-title mt-2">
                       <span className="text-dark">
                         Full Name: {member.fullName}
